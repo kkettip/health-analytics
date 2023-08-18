@@ -1,4 +1,4 @@
-import pandas as pd
+#import pandas as pd
 import numpy as np
 
 #number variable
@@ -32,3 +32,38 @@ myDict = {
       }
      }
 print(myDict)
+
+
+#function that takes in at least two inputs
+
+def volumeChecker(waterIn, waterOut):
+    #check volume level coming into tank
+    if waterIn <= 50:
+        volumeIn = 'low'
+    else:
+        volumeIn = 'high'
+
+    fillTank = 200 - waterIn
+    print('Add', fillTank, 'gallons to fill tank.')
+
+    #check volume level going out of tank
+    if waterOut >= 50:
+        volumeOut = 'high'
+    else:
+        volumeOut = 'low'
+
+    fillTank = 200 - waterOut
+    print('Remaining', fillTank, 'gallons in tank.')
+
+    output = [volumeIn, volumeOut]
+    return output 
+
+waterIn = 10 
+waterOut = 20 
+
+function_output = volumeChecker(waterIn, waterOut)
+
+print('volumeIn is: ', waterIn, 'gallons')
+print('volumeIn is: ', function_output[0]) 
+print('volumeOut is: ', waterOut, 'gallons')
+print('volumeOut is: ', function_output[1])
